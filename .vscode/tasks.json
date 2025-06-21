@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar com Raylib",
+            "type": "shell",
+            "command": "C:\\raylib\\w64devkit\\bin\\gcc.exe",
+            "args": [
+                "src\\main.c",
+                "-o",
+                "bin\\main.exe",
+                "C:\\raylib\\raylib\\src\\raylib.rc.data",  // equivalente ao script
+                "-s",
+                "-static",
+                "-O2",
+                "-std=c99",
+                "-Wall",
+                "-IC:\\raylib\\raylib\\src",
+                "-Iexternal",
+                "-DPLATFORM_DESKTOP",
+                "-LC:\\raylib\\raylib\\src", // se as libs estiverem lá
+                "-lraylib",
+                "-lopengl32",
+                "-lgdi32",
+                "-lwinmm"
+            ],
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "Compila o projeto usando o GCC do w64devkit e os includes do Raylib."
+        }
+    ]
+}
